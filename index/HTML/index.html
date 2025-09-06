@@ -25,7 +25,7 @@
 <body class="bg-white font-sans">
 
     <!-- Navbar -->
-    <nav id="main-nav" class="bg-white p-4 shadow-md sticky top-0 z-50 transition-colors duration-300">
+    <nav id="main-nav" class="bg-white p-4 shadow-md fixed w-full top-0 z-50 transition-colors duration-300">
         <div class="container mx-auto flex justify-between items-center relative">
             <a href="../index.html" id="nav-logo" class="text-2xl font-bold text-primary transition-colors duration-300">JobFlex</a>
             <div class="hidden md:flex space-x-6 items-center">
@@ -45,17 +45,59 @@
             <div id="mobile-menu"
                 class="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm flex flex-col items-end md:hidden transition-all duration-300 ease-in-out pointer-events-none opacity-0"
                 style="z-index:49;">
-                <div class="w-3/4 sm:w-1/2 bg-white shadow-xl h-full p-8 flex flex-col space-y-6 transform translate-x-full transition-transform duration-300 ease-in-out relative"
+                <div class="w-3/4 sm:w-1/2 bg-white shadow-xl h-full p-8 flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out relative"
                     id="mobile-menu-panel">
-                    <a href="../HTML/register.html" class="text-primary font-bold border-2 border-primary py-2 px-4 rounded-lg hover:bg-primary hover:text-white transition-all duration-300 text-lg text-center mt-16">Registrate</a>
-                    <a href="../HTML/login.html" class="bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 text-lg text-center">Iniciar Sesión</a>
+                    <h2 class="text-2xl font-bold text-dark mb-8">Menú</h2>
+        
+                    <nav class="flex-grow">
+                        <ul class="space-y-2">
+                            <li>
+                                <a href="#empresas" class="flex items-center p-3 text-base font-semibold text-dark rounded-lg hover:bg-gray-100 group">
+                                    <svg class="w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h6.375a.375.375 0 01.375.375v1.5a.375.375 0 01-.375.375H9a.375.375 0 01-.375-.375v-1.5A.375.375 0 019 6.75zM9 12.75h6.375a.375.375 0 01.375.375v1.5a.375.375 0 01-.375.375H9a.375.375 0 01-.375-.375v-1.5a.375.375 0 01.375.375z" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                    <span class="ml-3">Empresas que confían</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#publicar-oferta" class="flex items-center p-3 text-base font-semibold text-dark rounded-lg hover:bg-gray-100 group">
+                                    <svg class="w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                    <span class="ml-3">Publicar Oferta</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#testimonios" class="flex items-center p-3 text-base font-semibold text-dark rounded-lg hover:bg-gray-100 group">
+                                    <svg class="w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.125 3.01 2.625 3.01h9.75c1.5 0 2.625-1.41 2.625-3.01m-15 0V9.75c0-1.6 1.125-3.01 2.625-3.01h9.75c1.5 0 2.625 1.41 2.625 3.01m-15 0h15" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                    <span class="ml-3">Testimonios</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#nosotros" class="flex items-center p-3 text-base font-semibold text-dark rounded-lg hover:bg-gray-100 group">
+                                    <svg class="w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15 19.128a9.38 9.38 0 002.625.372m-10.5 0a9.38 9.38 0 002.625.372M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3a3 3 0 013-3h6.75a3 3 0 013 3" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M9 12a3 3 0 11-6 0 3 3 0 016 0zm12 0a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                    <span class="ml-3">Sobre Nosotros</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+            
+                    <div class="border-t border-light-gray pt-6 space-y-4">
+                         <a href="../HTML/register.html" class="block text-primary font-bold border-2 border-primary py-2 px-4 rounded-lg hover:bg-primary hover:text-white transition-all duration-300 text-lg text-center">Registrate</a>
+                         <a href="../HTML/login.html" class="block bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 text-lg text-center">Iniciar Sesión</a>
+                    </div>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative bg-white overflow-hidden">
+    <section class="relative bg-white overflow-hidden pt-16">
         <div class="container mx-auto px-6 py-24 md:py-32 flex flex-col md:flex-row items-center relative z-10">
             <div class="md:w-3/5">
                 <div class="max-w-xl text-center md:text-left mx-auto md:mx-0">
@@ -75,7 +117,7 @@
     </section>
 
     <!-- Company Logos Carousel -->
-    <section class="bg-light-gray py-10">
+    <section id="empresas" class="bg-light-gray py-10">
         <div class="container mx-auto px-4">
             <h3 class="text-center text-2xl font-semibold text-dark mb-8">Empresas que confían en nosotros</h3>
 
@@ -108,13 +150,18 @@
     </section>
 
     <!-- Post a Job Section -->
-    <section class="relative bg-white overflow-hidden">
-        <div class="container mx-auto px-6 py-24 md:py-32 flex items-center justify-center md:justify-end relative z-10">
+    <section id="publicar-oferta" class="relative bg-white overflow-hidden">
+        <!-- Mobile Image -->
+        <div class="md:hidden">
+             <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=2070&auto=format&fit=crop" alt="Reclutadores" class="w-full h-48 object-cover">
+        </div>
+
+        <div class="container mx-auto px-6 py-16 md:py-32 flex items-center justify-center md:justify-end relative z-10">
             <div class="md:w-1/2">
                 <div class="max-w-lg mx-auto md:ml-auto text-center md:text-left">
                     <h1 class="text-4xl font-bold text-dark mb-4">¿Eres una empresa?</h1>
                     <p class="text-secondary mb-6">Publica tu oferta de trabajo y encuentra al candidato ideal.</p>
-                    <ul class="space-y-4 mb-8 text-left">
+                    <ul class="space-y-4 mb-8 text-left inline-block">
                         <li class="flex items-center">
                             <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                             <span>Accede a miles de perfiles cualificados.</span>
@@ -132,6 +179,7 @@
                 </div>
             </div>
         </div>
+        <!-- Desktop Image -->
         <div class="hidden md:block absolute top-0 left-0 w-1/2 h-full diagonal-clip-right">
             <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=2070&auto=format&fit=crop" alt="Reclutadores" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-black opacity-30"></div>
@@ -139,7 +187,7 @@
     </section>
 
     <!-- Testimonials Carousel -->
-    <section class="bg-light-gray py-16">
+    <section id="testimonios" class="bg-light-gray py-16">
         <div class="container mx-auto px-6">
             <h3 class="text-center text-3xl font-bold text-dark mb-12">Lo que dicen nuestros usuarios</h3>
             <div class="relative">
@@ -181,23 +229,23 @@
     </section>
 
     <!-- Mission and Vision -->
-    <section class="container mx-auto px-6 py-16">
+    <section id="nosotros" class="container mx-auto px-6 py-16">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
             <!-- Misión Column -->
-            <div class="flex items-center gap-6 bg-primary p-8 rounded-lg shadow-lg">
-                <div class="text-left">
+            <div class="flex flex-col md:flex-row items-center gap-6 bg-primary p-8 rounded-lg shadow-lg text-center md:text-left">
+                <img src="https://picsum.photos/seed/jobflex-mission/100/100" alt="Icono de Misión" class="rounded-full shadow-lg flex-shrink-0 border-4 border-white mb-4 md:mb-0">
+                <div class="">
                     <h3 class="text-3xl font-bold text-white mb-4">Nuestra Misión</h3>
                     <p class="text-gray-200">Conectar el talento adecuado con las oportunidades correctas, impulsando el crecimiento profesional y el éxito empresarial a través de una plataforma innovadora y accesible para todos.</p>
                 </div>
-                <img src="https://picsum.photos/seed/jobflex-mission/100/100" alt="Icono de Misión" class="rounded-full shadow-lg hidden md:block flex-shrink-0 border-4 border-white">
             </div>
             <!-- Visión Column -->
-            <div class="flex items-center gap-6 bg-primary p-8 rounded-lg shadow-lg">
-                <div class="text-left">
+            <div class="flex flex-col md:flex-row items-center gap-6 bg-primary p-8 rounded-lg shadow-lg text-center md:text-left">
+                <img src="https://picsum.photos/seed/jobflex-vision/100/100" alt="Icono de Visión" class="rounded-full shadow-lg flex-shrink-0 border-4 border-white mb-4 md:mb-0">
+                <div class="">
                     <h3 class="text-3xl font-bold text-white mb-4">Nuestra Visión</h3>
                     <p class="text-gray-200">Ser la plataforma líder y de mayor confianza en la búsqueda de empleo en Latinoamérica, transformando la manera en que las personas y las empresas construyen su futuro.</p>
                 </div>
-                <img src="https://picsum.photos/seed/jobflex-vision/100/100" alt="Icono de Visión" class="rounded-full shadow-lg hidden md:block flex-shrink-0 border-4 border-white">
             </div>
         </div>
     </section>
@@ -305,6 +353,22 @@
             closeIcon.classList.add('hidden');
             document.body.style.overflow = '';
         }
+
+        // Smooth scroll para anclas
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if(targetElement) {
+                    closeMenu(); // Cierra el menú al hacer clic en un enlace
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
