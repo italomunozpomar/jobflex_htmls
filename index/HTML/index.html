@@ -26,17 +26,31 @@
 
     <!-- Navbar -->
     <nav id="main-nav" class="bg-white p-4 shadow-md sticky top-0 z-50 transition-colors duration-300">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 id="nav-logo" class="text-2xl font-bold text-primary transition-colors duration-300" href="../index.html" >JobFlex</h1>
+        <div class="container mx-auto flex justify-between items-center relative">
+            <a href="../index.html" id="nav-logo" class="text-2xl font-bold text-primary transition-colors duration-300">JobFlex</a>
             <div class="hidden md:flex space-x-6 items-center">
                 <a id="nav-register" href="../HTML/register.html" class="text-dark font-semibold hover:text-primary transition-colors duration-300">Registrate</a>
                 <a id="nav-login" href="../HTML/login.html" class="bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105">Iniciar Sesión</a>
             </div>
-            <button class="md:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            <!-- Botón hamburguesa/X -->
+            <button id="mobile-menu-btn" class="md:hidden focus:outline-none relative z-50" aria-label="Abrir menú">
+                <svg id="hamburger-icon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+                <svg id="close-icon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
+            <!-- Menú móvil animado -->
+            <div id="mobile-menu"
+                class="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm flex flex-col items-end md:hidden transition-all duration-300 ease-in-out pointer-events-none opacity-0"
+                style="z-index:49;">
+                <div class="w-3/4 sm:w-1/2 bg-white shadow-xl h-full p-8 flex flex-col space-y-6 transform translate-x-full transition-transform duration-300 ease-in-out relative"
+                    id="mobile-menu-panel">
+                    <a href="../HTML/register.html" class="text-primary font-bold border-2 border-primary py-2 px-4 rounded-lg hover:bg-primary hover:text-white transition-all duration-300 text-lg text-center mt-16">Registrate</a>
+                    <a href="../HTML/login.html" class="bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 text-lg text-center">Iniciar Sesión</a>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -95,9 +109,9 @@
 
     <!-- Post a Job Section -->
     <section class="relative bg-white overflow-hidden">
-        <div class="container mx-auto px-6 py-24 md:py-32 flex items-center justify-end relative z-10">
+        <div class="container mx-auto px-6 py-24 md:py-32 flex items-center justify-center md:justify-end relative z-10">
             <div class="md:w-1/2">
-                <div class="max-w-lg ml-auto text-center md:text-left">
+                <div class="max-w-lg mx-auto md:ml-auto text-center md:text-left">
                     <h1 class="text-4xl font-bold text-dark mb-4">¿Eres una empresa?</h1>
                     <p class="text-secondary mb-6">Publica tu oferta de trabajo y encuentra al candidato ideal.</p>
                     <ul class="space-y-4 mb-8 text-left">
@@ -240,5 +254,57 @@
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="../JS/main.js"></script>
+    <style>
+        /* Animación para el menú móvil */
+        #mobile-menu.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        #mobile-menu.open #mobile-menu-panel {
+            transform: translateX(0);
+        }
+        #mobile-menu #mobile-menu-panel {
+            transform: translateX(100%);
+        }
+        /* Mejorar visibilidad del botón "Registrate" en móvil */
+        #mobile-menu-panel a:first-of-type {
+            font-size: 1.15rem;
+            font-weight: bold;
+            border-width: 2px;
+        }
+    </style>
+    <script>
+        // Navbar móvil animado y profesional
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        // Abrir/cerrar menú con el mismo botón
+        menuBtn.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.contains('open');
+            if (isOpen) {
+                closeMenu();
+            } else {
+                mobileMenu.classList.add('open');
+                hamburgerIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Evita scroll de fondo
+            }
+        });
+
+        // Cerrar al hacer click fuera del panel
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) closeMenu();
+        });
+
+        function closeMenu() {
+            mobileMenu.classList.remove('open');
+            hamburgerIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+    </script>
 </body>
 </html>
