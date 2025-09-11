@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Representante - JobFlex</title>
+    <title>Validación de Empresa - JobFlex</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
     <script>
         tailwind.config = {
             theme: {
@@ -40,9 +40,9 @@
     <!-- Navbar -->
     <nav class="bg-primary md:bg-white p-4 shadow-md fixed w-full top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="../index.html" class="text-2xl font-bold text-white md:text-primary">JobFlex</a>
+            <a href="index.html" class="text-2xl font-bold text-white md:text-primary">JobFlex</a>
             <div>
-                <a href="../index.html" class="text-white md:text-dark font-semibold hover:text-primary transition-colors">Volver a Inicio</a>
+                <a href="index.html" class="text-white md:text-dark font-semibold hover:text-primary transition-colors">Volver a Inicio</a>
             </div>
         </div>
     </nav>
@@ -70,50 +70,28 @@
             </div>
             <!-- Post-it Note -->
             <div class="relative z-10 bg-light-gray text-dark p-6 rounded-lg shadow-2xl transform -rotate-3 max-w-xs">
-                <h3 class="font-bold text-lg mb-2">¡Registro de Representante!</h3>
-                <p class="text-sm">Al registrarte, te convertirás en el representante oficial de tu empresa en JobFlex. Podrás publicar ofertas de trabajo y gestionar candidatos en nombre de la empresa.</p>
+                <h3 class="font-bold text-lg mb-2">¡Atención Empresas!</h3>
+                <p class="text-sm">Al validar su RUT, podremos autocompletar la información de su empresa para agilizar el proceso de registro.</p>
             </div>
         </div>
 
         <!-- Panel de Formulario (Derecha) -->
-        <div class="w-full md:w-3/5 flex flex-col items-center p-8 md:p-12">
+        <div class="w-full md:w-3/5 flex flex-col p-8 md:p-12">
             <div class="w-full max-w-md m-auto">
                 <div class="text-center mb-8">
-                     <h1 class="text-3xl">
-                        <span class="text-gray-500">Registro de</span>
-                        <a href="../index.html" class="text-primary font-bold">Representante de Empresa</a>
-                    </h1>
+                     <h2 class="text-3xl">
+                        <span class="text-gray-500">Bienvenido a</span>
+                        <a href="index.html" class="text-primary font-bold">JobFlex</a>
+                    </h2>
                 </div>
 
-                <h2 class="text-3xl font-bold text-dark mb-2 text-center">Crea tu Cuenta</h2>
-                <p class="text-secondary mb-8 text-center">Estás a punto de crear una cuenta como representante de la empresa. Completa tus datos para continuar.</p>
+                <h2 class="text-3xl font-bold text-dark mb-2 text-center">Valida tu Empresa</h2>
+                <p class="text-secondary mb-8 text-center">Ingresa el RUT de tu empresa para comenzar el proceso de registro.</p>
 
-                <form action="#" method="POST" class="space-y-4">
-                    <div class="relative">
-                        <label for="empresa-nombre" class="input-label absolute top-3 left-3 text-sm font-medium text-dark transition-all duration-200 ease-in-out">Nombre de la Empresa</label>
-                        <input type="text" name="empresa-nombre" id="empresa-nombre" readonly value="Nombre de Empresa (Automático)" class="mt-1 block w-full pt-6 pb-3 px-3 border border-light-gray rounded-lg focus:outline-none focus:ring-2 focus:ring-primary peer bg-light-gray">
-                    </div>
-
-                    <div class="relative">
-                        <label for="fullname" class="input-label absolute top-3 left-3 text-sm font-medium text-dark transition-all duration-200 ease-in-out">Nombre Completo</label>
-                        <input type="text" name="fullname" id="fullname" required placeholder=" " class="mt-1 block w-full pt-6 pb-3 px-3 border border-light-gray rounded-lg focus:outline-none focus:ring-2 focus:ring-primary peer">
-                    </div>
-
-                    <div class="relative">
-                        <label for="email" class="input-label absolute top-3 left-3 text-sm font-medium text-dark transition-all duration-200 ease-in-out">Correo Electrónico (Dominio de Empresa) </label>
-                        <input type="email" name="email" id="email" required placeholder=" " class="mt-1 block w-full pt-6 pb-3 px-3 border border-light-gray rounded-lg focus:outline-none focus:ring-2 focus:ring-primary peer">
-                    </div>
-
-                    <div class="relative">
-                        <label for="password" class="input-label absolute top-3 left-3 text-sm font-medium text-dark transition-all duration-200 ease-in-out">Contraseña</label>
-                        <input type="password" name="password" id="password" required placeholder=" " class="mt-1 block w-full pt-6 pb-3 px-3 border border-light-gray rounded-lg focus:outline-none focus:ring-2 focus:ring-primary peer">
-                        
-                    </div>
-
-                    <div class="relative">
-                        <label for="confirm-password" class="input-label absolute top-3 left-3 text-sm font-medium text-dark transition-all duration-200 ease-in-out">Confirmar Contraseña</label>
-                        <input type="password" name="confirm-password" id="confirm-password" required placeholder=" " class="mt-1 block w-full pt-6 pb-3 px-3 border border-light-gray rounded-lg focus:outline-none focus:ring-2 focus:ring-primary peer">
-
+                <form action="register_emp.html" method="GET" class="space-y-6">
+                    <div>
+                        <label for="rut" class="block text-sm font-medium text-dark">RUT de la Empresa</label>
+                        <input type="text" name="rut" id="rut" required class="mt-1 block w-full p-3 border border-light-gray rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Ej: 76.123.456-7">
                     </div>
 
                     <div class="flex items-center">
@@ -122,30 +100,19 @@
                     </div>
 
                     <div>
-                        <button type="submit" id="register-button" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-primary hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all transform hover:scale-105">
-                            Crear Cuenta de Representante
-                            <span id="register-spinner" class="hidden ml-2 spinner"></span>
-                        </button>
+                        <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-primary hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all transform hover:scale-105">Validar y Continuar</button>
                     </div>
                 </form>
 
-                <div class="mt-6">
-                    <div class="relative">
-                        <div class="absolute inset-0 flex items-center">
-                            <div class="w-full border-t border-light-gray"></div>
-                        </div>
-                        <div class="relative flex justify-center text-sm">
-                            <span class="px-2 bg-white text-secondary">¿Ya tienes una cuenta de representante?</span>
-                        </div>
-                    </div>
+                <p class="mt-8 text-center text-sm text-dark">
+                    ¿No eres una empresa?
+                    <a href="register.html" class="font-medium text-primary hover:underline">Regístrate aquí</a>
+                </p>
 
-                    <div class="mt-6">
-                        <a href="../login.html" class="w-full inline-flex justify-center py-3 px-4 border border-light-gray rounded-lg shadow-sm bg-white text-sm font-medium text-dark hover:bg-light-gray transition-all">
-                            <span>Inicia Sesión</span>
-                        </a>
-                    </div>
-                </div>
-
+                <p class="mt-4 text-center text-sm text-dark">
+                    ¿Ya tienes una cuenta?
+                    <a href="login.html" class="font-medium text-primary hover:underline">Ingresa aquí</a>
+                </p>
             </div>
 
             <footer class="w-full mt-auto pt-8">
@@ -162,6 +129,5 @@
             </footer>
         </div>
     </main>
-
 </body>
 </html>
